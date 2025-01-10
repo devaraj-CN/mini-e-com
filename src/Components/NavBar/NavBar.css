@@ -66,3 +66,6 @@ background: rgb(192, 189, 189);
     background-color: red;
     color: white;
 }
+a{
+    text-decoration: none;
+}
