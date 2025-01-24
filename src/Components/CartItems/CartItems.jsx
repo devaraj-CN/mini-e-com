@@ -2,10 +2,12 @@ import React, { useContext } from 'react'
 import './CartItems.css'
 import { ShopContext } from '../../Context/ShopContext'
 import remove_icon from '../Assets/cart_cross_icon.png'
+import { IoRemoveCircle } from 'react-icons/io5'
 
 
 const CartItems = () => {
     const {getTotalCartAmout,all_product,cartItems,removeFromCart}=useContext(ShopContext);
+
   return (
     <div className='cartitems'>
         <div className="cartitems-format-main">
@@ -19,14 +21,14 @@ const CartItems = () => {
         <hr />
         {all_product.map((e)=>{
             if(cartItems[e.id]>0){
-                return <div>
+                return  <div key={e.id}>
                 <div className="cartitems-format cartitems-format-main">
                     <img src={e.image} alt="" className='carticon-product-icon' />
                     <p>{e.name}</p>
                     <p>${e.new_price}</p>
                     <button className='cartitems-quantity'>{cartItems[e.id]}</button>
                     <p>${e.new_price*cartItems[e.id]}</p>
-                    <img src={remove_icon} onClick={()=>{removeFromCart(e.id)}} alt="" />
+                    <IoRemoveCircle className='carticon-remove-icon' onClick={()=>{removeFromCart(e.id)}} />
                 </div>
             </div>
             }
