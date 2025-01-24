@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import './CartItems.css'
 import { ShopContext } from '../../Context/ShopContext'
-import remove_icon from '../Assets/cart_cross_icon.png'
 import { IoRemoveCircle } from 'react-icons/io5'
 
 
